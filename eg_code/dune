@@ -1,0 +1,4 @@
+(executable
+(name code)
+(public_name code)
+(libraries digestif.ocaml lwt.unix irmin irmin-mem libcassandra))

@@ -5,4 +5,15 @@
 * **libcassandra** directory should contain the c++ driver from datastax which I have not checked in due to its large size. It can be downloaded from its [github repo](https://github.com/datastax/cpp-driver). The driver is compiled using cmake which generates the required .so file.
 * **libcassandra.opam** is created to add the it as a library to the opam.
 * **output** folder contains the *.sexp file for reference.
+* **eg_code** directory contains a code and a dune which I am trying to run to verify if my code can access and run the C* driver or not.
 
+I have tried it in 3 ways:
++ ocamlfind ocamlc -I /home/shashank/work/irmin_cass/backendtools/irmin-master_exp/src/libcassandra/libuv/libuv.so -linkpkg -package digestif.ocaml -package irmin -package irmin-mem -package lwt.unix code.ml
+
+This works just fine
+
++ ocamlfind ocamlopt -I /home/shashank/work/irmin_cass/backendtools/irmin-master_exp/src/libcassandra/libuv/libuv.so -linkpkg -package digestif.ocaml -package irmin -package irmin-mem -package lwt.unix code.ml
+
++ dune exec src/code.exe --root=.
+
+The last two above give _undefined reference_ errors for the functions in the **libuv**
