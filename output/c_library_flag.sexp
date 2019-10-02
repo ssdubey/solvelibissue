@@ -1,0 +1,1 @@
+("-luv" "-lrt" "-lpthread" "-lnsl" "-ldl")
