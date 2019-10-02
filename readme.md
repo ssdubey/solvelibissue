@@ -8,11 +8,11 @@
 * **eg_code** directory contains a code and a dune which I am trying to run to verify if my code can access and run the C* driver or not.
 
 I have tried it in 3 ways:
-+ ocamlfind ocamlc -I /home/shashank/work/irmin_cass/backendtools/irmin-master_exp/src/libcassandra/libuv/libuv.so -linkpkg -package digestif.ocaml -package irmin -package irmin-mem -package lwt.unix code.ml
++ ocamlfind ocamlc -linkpkg -package digestif.ocaml -package irmin -package irmin-mem -package lwt.unix code.ml
 
 This works just fine
 
-+ ocamlfind ocamlopt -I /home/shashank/work/irmin_cass/backendtools/irmin-master_exp/src/libcassandra/libuv/libuv.so -linkpkg -package digestif.ocaml -package irmin -package irmin-mem -package lwt.unix code.ml
++ ocamlfind ocamlopt -linkpkg -package digestif.ocaml -package irmin -package irmin-mem -package lwt.unix code.ml
 
 + dune exec src/code.exe --root=.
 
